@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protótipo de Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+    <h2>Cadastro de Utilizador</h2>
+    <form id="meuFormulario">
+        <div class="form-group">
+            <label for="codigo">Código do Utilizador (Apenas números):</label>
+            <input type="text" id="codigo" pattern="[0-9]+" required placeholder="Ex: 12345">
+        </div>
+        <button type="submit" id="btnEnviar">Enviar Dados</button>
+        <div id="erroContainer" class="error-message"></div>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
