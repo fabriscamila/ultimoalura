@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protótipo de Cadastro</title>
+    <title>Protótipo de Validação</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="card">
-    <h2>Cadastro de Utilizador</h2>
+    <h2>Verificar Código</h2>
     <form id="meuFormulario">
         <div class="form-group">
-            <label for="codigo">Código do Utilizador (Apenas números):</label>
+            <label for="codigo">Insira o seu código de acesso (Apenas números):</label>
             <input type="text" id="codigo" pattern="[0-9]+" required placeholder="Ex: 12345">
         </div>
-        <button type="submit" id="btnEnviar">Enviar Dados</button>
+        <button type="submit" id="btnEnviar">Validar Código</button>
         <div id="erroContainer" class="error-message"></div>
     </form>
 </div>

@@ -6,11 +6,11 @@ document.getElementById('meuFormulario').addEventListener('submit', function(eve
     const btn = document.getElementById('btnEnviar');
     const erroContainer = document.getElementById('erroContainer');
 
-    // Esconde mensagens de erro anteriores
+    // Esconde mensagens de erro anteriores e restaura o botão
     erroContainer.style.display = 'none';
 
     // Simulação do envio assíncrono (Fetch API) para o servidor Java
-    fetch('/api/cadastrar', {
+    fetch('/api/validar', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -20,9 +20,8 @@ document.getElementById('meuFormulario').addEventListener('submit', function(eve
     .then(async response => {
         if (response.ok) {
             // Se o Java responder 200 OK -> Aplica o Aprendizado 1 (Feedback de Sucesso)
-            btn.textContent = "Enviado com Sucesso!";
+            btn.textContent = "Código Válido!";
             btn.classList.add('success');
-            btn.disabled = true;
         } else {
             // Se o Java responder erro (ex: 400 Bad Request) -> Trata o erro sem recarregar a página
             const data = await response.json();
@@ -33,5 +32,7 @@ document.getElementById('meuFormulario').addEventListener('submit', function(eve
         // Exibe o erro de forma amigável na interface (Resolvendo o Aprendizado 2)
         erroContainer.textContent = error.message;
         erroContainer.style.display = 'block';
+        btn.classList.remove('success');
+        btn.textContent = "Validar Código";
     });
 });

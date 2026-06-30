@@ -22,8 +22,10 @@ body {
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: bold;
+    font-size: 14px;
+    color: #333;
 }
 
 input {
@@ -47,7 +49,7 @@ button {
     transition: background-color 0.3s ease; 
 }
 
-/* Classe injetada via JS quando o formulário é submetido com sucesso */
+/* Classe injetada via JS quando o código é válido */
 button.success {
     background-color: #2ecc71; 
 }
